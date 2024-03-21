@@ -1,0 +1,77 @@
+{% extends 'layouts/app.html' %}
+{% block title %}Personalized Workout{% endblock %} 
+{% load static %}
+{% load mathfilters %}
+{% block content %}
+
+	<div class="breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">Personalized Workout</h1>
+                        <p>
+                        	Effortlessly monitor your meals, receive expert nutrition guidance, and stay on top of your dietary goals for a holistic approach to health.
+                        </p>
+                    </div>
+                    <ul class="breadcrumb-nav">
+                        <li><a href="{% url 'base:home' %}">Home</a></li>
+                        <li><a href="{% url 'base:services' %}">Services</a></li>
+                        <li>Personalized Workout</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <section class="section latest-news-area blog-list">
+        <div class="container">
+            <div class="row">
+
+                {% include 'inc/sidebar.html' %}
+
+                <div class="col-lg-8 col-md-7 col-12">
+                    <div class="row">
+                        {% if exercises_data %}
+                            {% for exercise in exercises_data %}
+                                <div class="col-lg-4 col-12">
+                                    <div class="single-news wow fadeInUp" data-wow-delay=".2s">
+                                        <div class="image">
+                                            <img class="thumb" src="{{ exercise.gifUrl }}" alt="{{ exercise.name }}">
+                                            <div class="meta-details">
+                                                <span style="text-transform: capitalize;">{{ exercise.equipment }}</span>
+                                            </div>
+                                        </div>
+                                        <div class="row content-body">
+                                            <a href="{% url 'base:show_single_exercise' exercise_id=exercise.id %}">
+                                                <h4 class="title" style="text-transform: capitalize;">{{ exercise.name }}</h4>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <p>No exercises found for this body part.</p>
+                        {% endif %}
+                    </div>
+                    <div class="pagination center">
+                        <ul class="pagination-list">
+                            {% if exercises_data.has_previous %}
+                                <li><a href="?page={{ exercises_data.previous_page_number }}"><i class="lni lni-chevron-left"></i></a></li>
+                            {% endif %}
+                            {% for i in exercises_data.paginator.page_range %}
+                                <li class="{% if i == exercises_data.number %}active{% endif %}">
+                                    <a href="?page={{ i }}">{{ i }}</a>
+                                </li>
+                            {% endfor %}
+                            {% if exercises_data.has_next %}
+                                <li><a href="?page={{ exercises_data.next_page_number }}"><i class="lni lni-chevron-right"></i></a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}

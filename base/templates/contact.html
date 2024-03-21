@@ -1,0 +1,109 @@
+{% extends 'layouts/app.html' %}
+{% block title %}Contact Us{% endblock %} 
+{% load static %}
+{% block content %}
+
+	<div class="breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">Contact Us</h1>
+                        <p>Get in touch with us now!!!</p>
+                    </div>
+                    <ul class="breadcrumb-nav">
+                        <li><a href="{% url 'base:home' %}">Home</a></li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="contact-us" class="contact-us section">
+        <div class="container">
+            <div class="contact-head wow fadeInUp" data-wow-delay=".4s">
+                <div class="row">
+                    <div class="col-lg-5 col-12">
+                        <div class="single-head">
+                            <div class="contant-inner-title">
+                                <h4>Contact Information</h4>
+                                <p>Business consulting excepteur sint occaecat cupidatat consulting non proident.</p>
+                            </div>
+                            <div class="single-info">
+                                <i class="lni lni-phone"></i>
+                                <ul>
+                                    <li>+250 788 888 888</li>
+                                </ul>
+                            </div>
+                            <div class="single-info">
+                                <i class="lni lni-envelope"></i>
+                                <ul>
+                                    <li><a href="mailto:info@testmassive.com">info@testmassive.com</a></li>
+                                </ul>
+                            </div>
+                            <div class="single-info">
+                                <i class="lni lni-map"></i>
+                                <ul>
+                                    <li>Kigali Rwanda</li>
+                                </ul>
+                            </div>
+                            <div class="contact-social">
+                                <h5>Follow Us on</h5>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon-1"><i class="lni lni-facebook-filled"></i></span>
+                                            <span class="icon-2"><i class="lni lni-facebook-filled"></i></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon-1"><i class="lni lni-twitter-original"></i></span>
+                                            <span class="icon-2"><i class="lni lni-twitter-original"></i></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon-1"><i class="lni lni-instagram"></i></span>
+                                            <span class="icon-2"><i class="lni lni-instagram"></i></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-12">
+                        <div class="form-main">
+                            <form class="form" method="post" action="assets/mail/mail.php">
+                                <div class="row">
+                                    <div class="col-lg-6 col-12">
+                                        <div class="form-group">
+                                            <input name="name" type="text" placeholder="Your Name" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <div class="form-group">
+                                            <input name="email" type="email" placeholder="Your Email" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group message">
+                                            <textarea name="message" placeholder="Your Message"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group button">
+                                            <button type="submit" class="btn ">Submit Message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}

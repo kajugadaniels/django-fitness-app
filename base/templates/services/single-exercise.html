@@ -1,0 +1,92 @@
+{% extends 'layouts/app.html' %}
+{% block title %}{{ exercise_data.name }}{% endblock %} 
+{% load static %}
+{% block content %}
+
+	<div class="breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title" style="text-transform: capitalize;">{{ exercise_data.name }}</h1>
+                    </div>
+                    <ul class="breadcrumb-nav">
+                        <li><a href="{% url 'base:home' %}">Home</a></li>
+                        <li><a href="{% url 'base:services' %}">Services</a></li>
+                        <li><a href="{% url 'base:personalized_workout' %}">Personal Workout</a></li>
+                        <li style="text-transform: capitalize;">{{ exercise_data.name }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section blog-single">
+        <div class="container">
+            <div class="col-lg-12 col-12">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="post-thumbnils">
+                            <img src="{{ exercise_data.gifUrl }}" alt="#">
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="post-details">
+                            <div class="detail-inner">
+                                <h2 class="post-title" style="text-transform: capitalize;">
+                                    {{ exercise_data.name }}
+                                </h2>
+                                <!-- post meta -->
+                                <ul class="custom-flex post-meta">
+                                    <li>
+                                        <a href="#">
+                                            <i class="lni lni-calendar"></i>
+                                            {{ exercise_data.bodyPart }}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="lni lni-comments"></i>
+                                            {{ exercise_data.equipment }}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="lni lni-eye"></i>
+                                            {{ exercise_data.target }}
+                                        </a>
+                                    </li>
+                                </ul>
+                                <p>
+                                    {{ exercise_data.instructions.0 }}
+                                </p>
+                                <p>
+                                    {{ exercise_data.instructions.1 }}
+                                </p>
+                                <p>
+                                    {{ exercise_data.instructions.2 }}
+                                </p>
+                                <p>
+                                    {{ exercise_data.instructions.3 }}
+                                </p>
+                                <p>
+                                    {{ exercise_data.instructions.4 }}
+                                </p>
+                                <p>
+                                    {{ exercise_data.instructions.5 }}
+                                </p>
+                                <p>
+                                    {{ exercise_data.instructions.6 }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}

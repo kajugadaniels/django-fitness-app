@@ -1,0 +1,97 @@
+{% load static %}
+
+<section class="newsletter-area section">
+    <div class="container">
+        <div class="row ">
+            <div class="col-lg-8 col-12">
+                <div class="subscribe-text wow fadeInLeft" data-wow-delay=".2s">
+                    <h6>Sign up for Newsletter</h6>
+                    <p class="">Sign Up and start using a free account <br> to see what it's all about.</p>
+                    <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
+                        <input name="EMAIL" placeholder="Your email address" class="common-input" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'" required="" type="email">
+                        <div class="button">
+                            <button class="btn">Subscribe Now!</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-4 col-12">
+                <div class="mini-call-action index2 wow fadeInRight" data-wow-delay=".4s">
+                    <h4>FitFlex is available for all devices</h4>
+                    <div class="button">
+                        <a href="#" class="btn"> <i class="lni lni-play-store"></i> <span>Available on</span>Google
+                            Play</a>
+                        <a href="#" class="btn"> <i class="lni lni-apple"></i> <span>Available on</span>App
+                            Store</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-middle">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12">
+                    <!-- Single Widget -->
+                    <div class="f-about single-footer">
+                        <div class="logo">
+                            <a href="index.html"><img src="{% static 'images/logo/footer-logo.svg' %}" alt="Logo"></a>
+                        </div>
+                        <p>Start building your creative website with our awesome template Massive.</p>
+                        <div class="footer-social">
+                            <ul>
+                                <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                                <li><a href="#"><i class="lni lni-twitter"></i></a></li>
+                                <li><a href="#"><i class="lni lni-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-footer f-link">
+                        <h3>Pages</h3>
+                        <ul>
+                            <li><a href="{% url 'base:about' %}">About Us</a></li>
+                            <li><a href="{% url 'base:services' %}">Our Services</a></li>
+                            <li><a href="{% url 'base:contact' %}">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-footer f-link">
+                        <h3>More Links</h3>
+                        <ul>
+                            <li><a href="{% url 'base:trainers' %}">Our Trainers</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-footer f-link">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="#">Join Our Community</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ End Footer Middle -->
+    <!-- Start Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="inner">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="left">
+                            <p>@2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

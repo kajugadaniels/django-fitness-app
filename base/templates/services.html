@@ -1,0 +1,79 @@
+{% extends 'layouts/app.html' %}
+{% block title %}Our Service{% endblock %} 
+{% load static %}
+{% block content %}
+
+	<div class="breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">Our Services</h1>
+                        <p>
+                        	
+                        </p>
+                    </div>
+                    <ul class="breadcrumb-nav">
+                        <li><a href="{% url 'base:home' %}">Home</a></li>
+                        <li>Our Services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="features" class="services index2 section">
+        <div class="container">
+            <div class="single-head">
+                <img class="service-patern wow fadeInLeft" data-wow-delay=".4s" src="{% static 'images/service/service-patern.png' %}" alt="#">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="single-service wow fadeInUp" data-wow-delay=".2s">
+                            <h3><a href="{% url 'base:personalized_workout' %}">Personalized Workouts</a></h3>
+                            <div class="icon">
+                                <i class="lni lni-dumbbell"></i>
+                            </div>
+                            <p>
+                                Your personalized fitness companion, crafting workouts just for you - adaptable, effective, and always challenging.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="single-service wow fadeInUp" data-wow-delay=".4s">
+                            <h3><a href="{% url 'base:eatSmart' %}">EatSmart Tracker</a></h3>
+                            <div class="icon">
+                                <i class="lni lni-fresh-juice"></i>
+                            </div>
+                            <p>
+                                Easily track meals, get expert nutrition advice, and fuel your body right for your fitness goals.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="single-service wow fadeInUp" data-wow-delay=".6s">
+                            <h3><a href="#">Real-time Progress Tracking</a></h3>
+                            <div class="icon">
+                                <i class="lni lni-slim"></i>
+                            </div>
+                            <p>
+                                Track your fitness journey in real-time, with clear visuals of your achievements and improvements.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="single-service wow fadeInUp" data-wow-delay=".8s">
+                            <h3><a href="#">Community Support</a></h3>
+                            <div class="icon">
+                                <i class="lni lni-handshake"></i>
+                            </div>
+                            <p>
+                                Join a supportive fitness community, share successes, and conquer challenges together for ultimate motivation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}

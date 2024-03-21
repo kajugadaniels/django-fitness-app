@@ -1,0 +1,23 @@
+<aside class="col-lg-4 col-md-5 col-12">
+    <div class="sidebar">
+        <div class="widget categories-widget">
+            <h5 class="widget-title">Body Parts</h5>
+            <ul class="custom">
+                <li>
+                    {% for body_part in body_parts %}
+                        <a href="{% url 'base:exercise_list_by_body_part' body_part=body_part %}">{{ body_part|title }}</a>
+                    {% endfor %}
+                </li>
+            </ul>
+        </div>
+
+        <div class="widget popular-tag-widget">
+            <h5 class="widget-title">Equipments</h5>
+            <div class="tags">
+                {% for equipment_tool in equipment_tools %}
+                    <a href="{% url 'base:exercise_list_by_equipment_tool' equipment_tool=equipment_tool %}">{{ equipment_tool|title }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</aside>

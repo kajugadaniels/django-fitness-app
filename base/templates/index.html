@@ -1,0 +1,239 @@
+{% extends 'layouts/app.html' %}
+{% block title %}Home{% endblock %} 
+{% load static %}
+{% block content %}
+
+	<section id="hero-area" class="hero-area index2">
+        <img class="shape" src="{% static 'images/hero/img-wave.png' %}" alt="#">
+        <div class="hero-inner">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-6 col-12">
+                        <div class="mobile-screen">
+                            <img class="wow fadeInDown" data-wow-delay=".5s" src="{% static 'images/hero/app-overview.png' %}" alt="#">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 co-12">
+                        <div class="home-slider">
+                            <div class="hero-text">
+                                <h1 class="wow fadeInUp" data-wow-delay=".3s">
+                                    Elevate Your Body, Ignite Your Potential
+                                </h1>
+                                <p class="wow fadeInUp" data-wow-delay=".5s">
+                                    Discover a new era of fitness with Peak Precision. Tailored workouts, expert guidance, and a supportive community await you. Unleash your full potential and sculpt a stronger, healthier you. Your journey to peak fitness starts here. 🚀💪
+                                </p>
+                                <div class="button wow fadeInUp" data-wow-delay=".7s">
+                                    <a href="#" class="btn">Download our App</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="services index2 section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-12">
+                    <div class="section-title align-left">
+                        <span class="wow fadeInDown" data-wow-delay=".2s">App Features</span>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Your experience gets better and better over time.
+                        </h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">
+                            Unlock the full potential of your fitness journey with our App Features. Elevate your experience with seamless personalization, real-time progress tracking, and a supportive community. Your path to a stronger, healthier you just got smarter and more inspiring. Dive in and discover a new era of fitness excellence
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="review-content wow fadeInRight" data-wow-delay=".3s">
+                        <h3>4.5</h3>
+                        <ul>
+                            <li><i class="lni lni-star-filled"></i></li>
+                            <li><i class="lni lni-star-filled"></i></li>
+                            <li><i class="lni lni-star-filled"></i></li>
+                            <li><i class="lni lni-star-filled"></i></li>
+                            <li><i class="lni lni-star-half"></i></li>
+                        </ul>
+                        <p>From 3,070 Reviews </p>
+                    </div>
+                </div>
+            </div>
+            <div class="single-head">
+                <img class="service-patern wow fadeInLeft" data-wow-delay=".4s" src="{% static 'images/service/service-patern.png' %}" alt="#">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="single-service wow fadeInUp" data-wow-delay=".2s">
+                            <h3><a href="{% url 'base:personalized_workout' %}">Personalized Workouts</a></h3>
+                            <div class="icon">
+                                <i class="lni lni-dumbbell"></i>
+                            </div>
+                            <p>
+                                Your personalized fitness companion, crafting workouts just for you - adaptable, effective, and always challenging.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="single-service wow fadeInUp" data-wow-delay=".4s">
+                            <h3><a href="{% url 'base:eatSmart' %}">EatSmart Tracker</a></h3>
+                            <div class="icon">
+                                <i class="lni lni-fresh-juice"></i>
+                            </div>
+                            <p>
+                                Easily track meals, get expert nutrition advice, and fuel your body right for your fitness goals.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="single-service wow fadeInUp" data-wow-delay=".6s">
+                            <h3><a href="#">Real-time Progress Tracking</a></h3>
+                            <div class="icon">
+                                <i class="lni lni-slim"></i>
+                            </div>
+                            <p>
+                                Track your fitness journey in real-time, with clear visuals of your achievements and improvements.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="single-service wow fadeInUp" data-wow-delay=".8s">
+                            <h3><a href="#">Community Support</a></h3>
+                            <div class="icon">
+                                <i class="lni lni-handshake"></i>
+                            </div>
+                            <p>
+                                Join a supportive fitness community, share successes, and conquer challenges together for ultimate motivation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="overview" class="about-us index2 section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-12">
+                    <div class="about-left">
+                        <div class="section-title align-left">
+                            <span class="wow fadeInDown" data-wow-delay=".2s">App Overview</span>
+                            <h2 class="wow fadeInUp" data-wow-delay=".4s">FitHub: Your All-in-One Fitness Companion</h2>
+                            <p class="wow fadeInUp" data-wow-delay=".6s">
+                                Your all-in-one fitness companion, FitHub, delivers personalized workouts, nutrition tracking, and real-time progress updates. Join a thriving community and experience wellness at your fingertips. Your journey, simplified and inspired.
+                            </p>
+                        </div>
+                        <div class="about-tab wow fadeInUp" data-wow-delay=".3s">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#t-tab1" role="tab">Intuitive User Experience</a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#t-tab2" role="tab">Motivational Boosts</a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#t-tab3" role="tab">Health Monitoring Made Simple</a></li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="t-tab1" role="tabpanel">
+                                    <div class="tab-content">
+                                        <p>
+                                            Experience the simplicity of fitness with our user-friendly app, ensuring a seamless and hassle-free journey to a healthier you.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="t-tab2" role="tabpanel">
+                                    <div class="tab-content">
+                                        <p>
+                                            Stay inspired and on track with personalized motivation features, designed to uplift and energize you throughout your fitness adventure.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="t-tab3" role="tabpanel">
+                                    <div class="tab-content">
+                                        <p>
+                                            Effortlessly track your health metrics, from steps taken to sleep patterns, providing a comprehensive overview of your well-being, all in one easy-to-use platform.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-12">
+                    <div class="about-right wow fadeInRight" data-wow-delay=".4s">
+                        <img src="{% static 'images/hero/ftns_hero.png' %}" alt="#">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing-table section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <span class="wow fadeInDown" data-wow-delay=".2s">Choose Your Path to Wellness</span>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Our Pricing Plan</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">
+                            Unlock your full potential with FitPlans, where affordable fitness meets personalized wellness. Choose a subscription that suits your goals and embark on a transformative journey to a healthier, stronger you.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="single-table wow fadeInUp" data-wow-delay=".2s">
+                        <div class="table-head">
+                            <h4 class="title">Starter Plan</h4>
+                            <div class="price">
+                                <p class="amount">$4.99<span class="duration">per month</span></p>
+                            </div>
+                        </div>
+                        <ul class="table-list">
+                            <li>Personalized Workout Plans</li>
+                            <li>Basic Health Tracking</li>
+                            <li>Entry-Level Nutrition Insights</li>
+                        <div class="button">
+                            <a class="btn" href="#">Start free trial</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="single-table wow fadeInUp" data-wow-delay=".4s">
+                        <div class="table-head">
+                            <h4 class="title">Pro Plan</h4>
+                            <div class="price">
+                                <p class="amount">$9.99<span class="duration">per month</span></p>
+                            </div>
+                        </div>
+                        <ul class="table-list">
+                            <li>All Starter Plan Features</li>
+                            <li>Enhanced Nutrition Tracking</li>
+                            <li>Exclusive Motivational Boosts</li>
+                        </ul>
+                        <div class="button">
+                            <a class="btn" href="#">Start free trial</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="single-table wow fadeInUp" data-wow-delay=".6s">
+                        <div class="table-head">
+                            <h4 class="title">Premium Plan</h4>
+                            <div class="price">
+                                <p class="amount">$14.99<span class="duration">per month</span></p>
+                            </div>
+                        </div>
+                        <ul class="table-list">
+                            <li>Premium Health Monitoring</li>
+                            <li>Advanced Motivation Features</li>
+                            <li>Exclusive Content and Challenges</li>
+                        </ul>
+                        <div class="button">
+                            <a class="btn" href="#">Start free trial</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}

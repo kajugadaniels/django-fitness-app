@@ -1,0 +1,134 @@
+{% extends 'layouts/app.html' %}
+{% block title %}Seamless Nutrition Tracking{% endblock %} 
+{% load static %} {% load humanize %}
+{% load mathfilters %}
+{% block content %}
+
+	<div class="breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">Seamless Nutrition Tracking</h1>
+                        <p>
+                        	Effortlessly monitor your meals, receive expert nutrition guidance, and stay on top of your dietary goals for a holistic approach to health.
+                        </p>
+                    </div>
+                    <ul class="breadcrumb-nav">
+                        <li><a href="{% url 'base:home' %}">Home</a></li>
+                        <li><a href="{% url 'base:services' %}">Services</a></li>
+                        <li>Seamless Nutrition Tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section latest-news-area blog-list">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-2 col-md-12 col-12">
+                </div>
+                <div class="col-lg-8 col-md-12 col-12">
+                    <div class="sidebar">
+                        <div class="widget search-widget">
+                            <h5 class="widget-title">Find Calories</h5>
+                            <form method="POST">
+                                {% csrf_token %}
+                                <input type="text" name="query" placeholder="Search for calories in your food,..">
+                                <button type="submit"><i class="lni lni-search-alt"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% if api %}
+                {% if api == "There was an error" %}
+                    <div class="row">
+                        <div class="alert alert-danger">
+                            <p>Error here,....</p>
+                        </div>
+                        {% else %}
+                        <div class="text-center mb-5">
+                            <h5>{{api.0.name}} has total <strong>{{ api.0.calories }} calories</strong></h5>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <h3 class="text-center ml-3 mb-5" style="font-size: 20px">To burn <strong>{{ api.0.calories }}</strong> you'll have to do this exercise</h3>
+                            <aside class="col-lg-4 col-md-5 col-12">
+                                <div class="sidebar">
+                                    <div class="widget categories-widget">
+                                        <h5 class="widget-title">Nutrition Values</h5>
+                                        <ul class="custom">
+                                            <li>
+                                                <a href="#">Carbohydrates<span>{{ api.0.carbohydrates_total_g }}</span></a>
+                                                <a href="#">Cholesterol<span>{{ api.0.cholesterol_mg }}</span></a>
+                                                <a href="#">Saturated Fat<span>{{ api.0.fat_saturated_g }}</span></a>
+                                                <a href="#">Fiber Content<span>{{ api.0.fiber_g }}</span></a>
+                                                <a href="#">Potassium<span>{{ api.0.potassium_mg }}</span></a>
+                                                <a href="#">Protein<span>{{ api.0.protein_g }}</span></a>
+                                                <a href="#">Sodium<span>{{ api.0.sodium_mg }}</span></a>
+                                                <a href="#">Sugar<span>{{ api.0.sugar_g }}</span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </aside>
+                            <div class="col-lg-8 col-md-7 col-12">
+                                <div class="row">
+                                    <div class="col-lg-12 col-12 mb-3">
+                                        <div class="d-flex wow fadeInUp" data-wow-delay=".2s">
+                                            <div class="image">
+                                                <img class="thumb" src="https://i.pinimg.com/originals/cd/51/26/cd5126eff8572af57bd33219712337f7.gif" style="width: 120px;">
+                                            </div>
+                                            <div class="content-body mr-5">
+                                                <h5 class="mb-3">
+                                                    Jog
+                                                </h5>
+                                                <p>
+                                                    You'll have to jog for <strong>{{ api.0.calories | div:229|mul:60|floatformat:0 }}</strong> minutes
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-12 mb-3">
+                                        <div class="d-flex wow fadeInUp" data-wow-delay=".2s">
+                                            <div class="image">
+                                                <img class="thumb" src="https://cdn4.sharechat.com/575d05d_1668298190076_sc.gif?tenant=sc&referrer=pwa-sharechat-service&f=076_sc.gif" style="width: 120px;">
+                                            </div>
+                                            <div class="content-body mr-5">
+                                                <h5 class="mb-3">
+                                                    Yoga
+                                                </h5>
+                                                <p>
+                                                    You'll have to power yoga for <strong>{{ api.0.calories | div:223|mul:60|floatformat:0 }}</strong> minutes
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-12 mb-3">
+                                        <div class="d-flex wow fadeInUp" data-wow-delay=".2s">
+                                            <div class="image">
+                                                <img class="thumb" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a258b2108677535.5fc364926e4a7.gif" style="width: 120px;">
+                                            </div>
+                                            <div class="content-body">
+                                                <h5 class="mb-3">
+                                                    Get a GYM workout
+                                                </h5>
+                                                <p>
+                                                    You'll have to lift weigh for <strong>{{ api.0.calories | div:483|mul:60|floatformat:0 }}</strong> minutes
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
+    </section>
+
+{% endblock content %}

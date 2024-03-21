@@ -1,0 +1,72 @@
+{% extends 'layouts/app.html' %}
+{% block title %}Trainers{% endblock %} 
+{% load static %}
+{% block content %}
+
+	<div class="breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">Trainers</h1>
+                        <p>
+                        	
+                        </p>
+                    </div>
+                    <ul class="breadcrumb-nav">
+                        <li><a href="{% url 'base:home' %}">Home</a></li>
+                        <li>Trainers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="team" class="team section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title align-center">
+                        <span class="wow fadeInDown" data-wow-delay=".2s">Meet our Creative Team</span>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Our Awesome Team</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
+                            Ipsum available, but the majority have suffered alteration in some form.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for trainer in trainers %}
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="single-team wow fadeInUp" data-wow-delay=".2s">
+                            <div class="shapes">
+                                <img class="shape1" src="{% static 'images/team/team-shape1.svg' %}" alt="#">
+                                <img class="shape2" src="{% static 'images/team/team-shape2.svg' %}" alt="#">
+                                <div class="image">
+                                    <img src="{{ trainer.image.url }}" alt="#">
+                                </div>
+                            </div>
+                            <div class="info-head">
+                                <div class="info-box">
+                                    <h4 class="name">
+                                        <a href="#">{{ trainer.title }}</a>
+                                    </h4>
+                                    <span class="designation">
+                                        {{ trainer.role }}
+                                    </span>
+                                </div>
+                                <div class="social-links">
+                                    <ul class="social">
+                                        <li>
+                                            <a href="{{ trainer.instagram }}"><i class="lni lni-instagram"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
