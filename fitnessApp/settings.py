@@ -59,7 +59,7 @@ ROOT_URLCONF = 'fitnessApp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'base/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,12 +74,13 @@ TEMPLATES = [
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'base/static'),
+    os.path.join(BASE_DIR, 'static'),
 ]
 
-MEDIA_URL = 'base/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "base/media")
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 WSGI_APPLICATION = 'fitnessApp.wsgi.application'
 
